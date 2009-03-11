@@ -1,0 +1,119 @@
+Short:        WBRSS - Read RSS News from your WorkBench
+Author:       Diego Casorran
+Uploader:     diegocr <at> users <dot> sf <dot> net
+Type:         comm/tcp
+Version:      1.0
+Architecture: m68k-amigaos > 3.0
+
+WBRSS is a little tool which will allow you to read RSS news from your
+Workbench (or public screen) on a nice way by using a hand-made tiny
+window with scrolling text. It comes by default with three pre-defined 
+layouts, futhermore it allows you to change colors, text font, etc...
+
+Its configuration is based on tooltypes, which are the follow:
+
+
+ ToolType    | Description
+---------------------------------------------------------------------------
+  LEFT       | The program creates a unmovible backdrop window, here you
+             | should define at which left position the window must be
+             | created.
+---------------------------------------------------------------------------
+  TOP        | top position for the window's creation
+---------------------------------------------------------------------------
+  WIDTH      | Width for the window (height is deduced from font size)
+---------------------------------------------------------------------------
+  FONTNAME   | Font you wish to use to draw news's texts, supported fonts
+             | are those which filename ends whith .font or .ttf, to use
+             | TrueType Fonts ttengine.library is required
+---------------------------------------------------------------------------
+  FONTSIZE   | Size to use for the provided font name, which size is used
+             | as well to the window's height
+---------------------------------------------------------------------------
+  TEXTPEN    | pen color to use with the font
+---------------------------------------------------------------------------
+  BGCOLOR    | Window background color.
+---------------------------------------------------------------------------
+  BOXCOLOR   | Window border color (if layout > 0, see below)
+---------------------------------------------------------------------------
+  DELAY      | text scrolling speed, really useless... keep as-is
+---------------------------------------------------------------------------
+  LAYOUT     | The program has some pre-defined window layouts, setting 
+             | this to 0 creates no layout, that is a plain window which
+             | could be helpfull if you want to place the window at the 
+             | workbench titlebar, setting this to 1 creates a nice layout
+             | with a [rss] button, and places the website's favicon which
+             | you can click to go to the rss news site (optional), setting
+             | this to 2 creates a similar layout to #2 but orange bg.
+---------------------------------------------------------------------------
+  TASKPRI    | program's task priority
+---------------------------------------------------------------------------
+  SEPIMG     | Image to use as news separator, loaded via datatypes
+---------------------------------------------------------------------------
+  FAVICON    | Boolen indicating if you want to receive and use as a button
+             | the rss news website's favicon
+---------------------------------------------------------------------------
+  PUBSCREEN  | Which screen the program must use, WB if none
+---------------------------------------------------------------------------
+  URL        | Full url pointing to RSS feeds, you can use a unlimited 
+             | number of URL tooltypes.
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+
+- Supported controls:
+
+Clicking ESC closed the program.
+
+Clicking SPACE stops the text from scrolling.
+
+Clicking the logo (on the right side of the window) will open the current 
+RSS's website, If FAVICON=1 tooltype is used (and openurl.library installed)
+
+Clicking over the scrolling text will open the RSS's website pointing to the
+news item you was reading (to expand the info), if openurl.library installed.
+
+Using the left arrow causes the text to scroll faster.
+
+
+
+- Changelog:
+
+  * 2007-02-01:	First Version
+  * 2009-03-08: Recompiled using uptodate libxml2
+
+
+
+- Licence:
+
+WBRSS is Freeware, Copyright (C)2007-2009 Diego Casorran, All rights reserved.
+
+WBRSS uses the XML2 library, which licence is as follow:
+
+Except where otherwise noted in the source code (e.g. the files hash.c,
+list.c and the trio files, which are covered by a similar licence but
+with different Copyright notices) all the files are:
+
+ Copyright (C) 1998-2003 Daniel Veillard.  All Rights Reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is fur-
+nished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FIT-
+NESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+DANIEL VEILLARD BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON-
+NECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Except as contained in this notice, the name of Daniel Veillard shall not
+be used in advertising or otherwise to promote the sale, use or other deal-
+ings in this Software without prior written authorization from him.
+
